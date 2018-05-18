@@ -30,7 +30,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="App" styles={{padding : '20px'}}>
         My App
         <Projects projects={this.state.projects}/>
         <AddProject />
