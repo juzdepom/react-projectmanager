@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 
 class AddProject extends Component {
     constructor(){
@@ -15,6 +16,7 @@ class AddProject extends Component {
             alert("Title is required");
         } else {
             this.setState({newProject: {
+                id: uuid.v4(),
                 title: this.refs.title.value,
                 category: this.refs.category.value,
             }}, function(){
@@ -26,7 +28,7 @@ class AddProject extends Component {
     }
     render() {
         let categoryOptions = this.props.categories.map(category => {
-            return <option key={category} value="category">{category}</option>
+            return <option key={category} value={category}>{category}</option>
         })
         return (
             //note: in JSX you can't use 'class' as an attribute
@@ -37,6 +39,7 @@ class AddProject extends Component {
                         <label>Title</label><br />
                         <input type="text" ref="title"/>
                     </div>
+                    <br />
                     <div>
                         <label>Category</label><br />
                         <select ref="category">
@@ -44,6 +47,7 @@ class AddProject extends Component {
                         </select>
 
                     </div>
+                    <br />
                     <input type="submit" value="Submit" />
                 </form>
             </div>
