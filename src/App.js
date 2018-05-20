@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import uuid from 'uuid'
 import Projects from './components/Projects';
+import Todos from './components/Todos';
 import AddProject from './components/AddProject';
 import $ from 'jquery';
 import './App.css';
@@ -19,8 +20,9 @@ class App extends Component {
       dataType: 'json',
       cache: false,
       success: function(data){
+        // console.log("THE TYPE IS", typeof data)
         this.setState({todos: data}, function(){
-          console.log(this.state)
+          // console.log(this.state)
         })
       }.bind(this),
       error: function(xhr, status, err){
@@ -77,6 +79,7 @@ class App extends Component {
         <h2>My App</h2>
         <AddProject addProject={this.handleAddProject.bind(this)}/>
         <Projects projects={this.state.projects} onDelete={this.handleDeleteProject.bind(this)}/>
+        <Todos todos={this.state.todos}/>
 
       </div>
     );
