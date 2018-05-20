@@ -21,6 +21,4 @@ ProjectItem.propTypes = {
     deleteProject: PropTypes.func
 }
 
-
-
 export default ProjectItem;
