@@ -1,4 +1,4 @@
-##Project created from [tutorial](https://www.youtube.com/watch?v=A71aqufiNtQ) by Traversy
+## Project created from [tutorial](https://www.youtube.com/watch?v=A71aqufiNtQ) by Traversy
 
 ![gif](gif.gif)
 
